@@ -1,0 +1,6 @@
+När det kommer till feedback som vi hittade så har vi några exemple. Ett exmple på visuel feedback är när man klickar på ett recept så ser man ett x icon som get användaren ett tydligt sätt att "exita". 
+Ett annat exemple på Visual feedback är med controllerna och svårhetsgraderna och även recepten, när man har musen över den ena eller den andra så "highlightas" knappen som ger ledtråd till användaren att man kan interagera med den.
+Ett exemple på modular feedback är med alla controller vi använder (Difficulty,Price ect). Dessa ger användaren en möjlighet att justera eller välja ett pris/ svårhetsgrad och så uppdateras tillståndet i den respectiva hanteranen.
+
+Programmet har även flera delar som gör den "plient", ett exemple på detta är med dom återanvändbara widgetcontrollerna.
+
