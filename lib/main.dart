@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
+import 'package:lab2/model/recipe_database/recipe_handler.dart';
 import 'package:lab2/pages/main_view.dart';
+import 'package:lab2/ui_controller.dart';
+import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => RecipeHandler()),
+        ChangeNotifierProvider(create: (context) => UIController()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +27,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Receptsök',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: AppTheme.colorScheme,
+        textTheme: AppTheme.textTheme,
       ),
       home: MainView(),
     );
