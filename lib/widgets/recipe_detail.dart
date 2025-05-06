@@ -56,7 +56,7 @@ class RecipeDetail extends StatelessWidget {
                   child: _image(recipe),
                   ),
                 Text("Ingridienser"),
-                Text("recipe.servings portioner")
+                Text("${recipe.servings} portioner")
               ],
             ),
             
