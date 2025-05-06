@@ -38,6 +38,20 @@ class RecipeDetail extends StatelessWidget {
     );
   }
 
+  Widget _ingredientList(Recipe recipe) {
+    var ingredients = recipe.ingredients;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: ingredients.map((ingredient) {
+        return Text(
+        "$ingredient",
+        style: TextStyle(fontSize: 16),
+        );
+      }).toList(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var uiController = Provider.of<UIController>(context, listen: false);
@@ -56,7 +70,10 @@ class RecipeDetail extends StatelessWidget {
                   child: _image(recipe),
                   ),
                 Text("Ingridienser"),
-                Text("${recipe.servings} portioner")
+                Text("${recipe.servings} portioner"),
+                const SizedBox(height: 8),
+                _ingredientList(recipe),
+                
               ],
             ),
             
