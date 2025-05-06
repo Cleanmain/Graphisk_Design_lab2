@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/model/recipe_database/recipe.dart';
 import 'package:lab2/ui_controller.dart';
 import 'package:lab2/util/cuisine.dart';
@@ -17,7 +18,7 @@ class RecipeDetail extends StatelessWidget {
     return Stack(
       children: [
         ClipRect(
-          child: Container(
+          child: SizedBox(
             width: 240,
             height: 240,
             child:FittedBox(
@@ -47,18 +48,31 @@ class RecipeDetail extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _image(recipe),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: _image(recipe),
+                  ),
+                Text("Ingridienser"),
+                Text("recipe.servings portioner")
+              ],
+            ),
+            
 
             const SizedBox(width: 16),
 
             Expanded(
-              child: Text(
-                recipe.name,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(recipe.name,
+                  style: AppTheme.largeHeading)
+                ]
+              )
+              
+                
             ),
 
             IconButton(
