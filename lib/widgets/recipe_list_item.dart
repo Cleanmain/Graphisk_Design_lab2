@@ -18,7 +18,7 @@ class RecipeListItem extends StatelessWidget {
       children: [
         // The recipe image (base layer)
         ClipRect(
-          child: Container(
+          child: SizedBox(
             width: 104, // Square width
             height: 104, // Square height
             child: FittedBox(
@@ -45,7 +45,7 @@ class RecipeListItem extends StatelessWidget {
       child: Card(
         elevation: 6,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: Container(
+        child: SizedBox(
           height: 128,
           child: Row(
             children: [
